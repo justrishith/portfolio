@@ -1,102 +1,78 @@
 /**
  * Static profile data.
  *
- * Edit this file to customise the "About me" content shown on the
- * home page and the dedicated `/profile` route. Everything is plain
- * TypeScript so the types in `@/features/profile` will catch typos
- * for you at build time.
+ * Every fact here traces to LifeOS context files or Rishith's LinkedIn
+ * profile (provided 2026-08-26). Nothing invented; placeholders are
+ * clearly decorative (avatar initials, stock cover image).
  */
 
 import type { Profile } from "@/features/profile";
 
 export const profileData: Profile = {
   id: "me",
-  name: "Your Name",
-  handle: "yourhandle",
-  title: "Full Stack Developer",
-  /**
-   * Use any image URL. The default uses Unsplash placeholders so the
-   * template renders out-of-the-box without bundling a real photo.
-   * Replace with `/your-avatar.jpg` after dropping a file in
-   * `public/`, or any HTTPS URL that's allowed in
-   * `next.config.ts > images.remotePatterns`.
-   */
-  avatarUrl:
-    "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=400&q=80",
+  name: "Rishith Karnati",
+  handle: "justrishith",
+  title: "Software Developer",
+  avatarUrl: "/avatar.svg",
   coverUrl:
     "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1600&q=80",
-  bio: "Building things on the web — pragmatically and with care.",
-  location: "Remote",
-  verified: true,
+  bio: "High-school builder shipping small products with AI.",
+  location: "Fremont, California",
+  verified: false,
   about: [
-    "Hi, I'm Your Name — a developer who enjoys turning ideas into shipped products. I work across the stack and care about code that's pleasant to read and easy to maintain.",
-    "On the frontend I reach for TypeScript, React, Next.js, and Tailwind CSS. On the backend I'm comfortable with Node.js and PostgreSQL, plus whatever else gets the job done.",
-    "When I'm not coding I read, take long walks, and tinker with side projects that may or may not see the light of day.",
+    "I'm Rishith — a high-school software developer at Irvington High School (class of 2029) interested in computer science, artificial intelligence, and building useful technology.",
+    "I learn software by shipping small, understandable products instead of generating code I can't explain. That philosophy produced Threadline, an open-source AI-workspace template, and LinkUp, a web app for friend groups built with Next.js and Supabase.",
+    "Outside technical work I serve as an AI/ML Club Officer and as a Senior Patrol Leader in Scouts BSA, leading about 50 Scouts and running 15+ troop events — experience in leadership, organization, teaching, and collaboration.",
+    "Currently working through Harvard's CS50 and strengthening my Python and front-end foundations. I'm open to internships and learning opportunities with early-stage teams.",
   ],
   skills: [
-    { name: "TypeScript", category: "Language" },
-    { name: "JavaScript", category: "Language" },
-    { name: "Python", category: "Language" },
-    { name: "Go", category: "Language" },
-    { name: "React", category: "Frontend" },
-    { name: "Next.js", category: "Frontend" },
-    { name: "Tailwind CSS", category: "Frontend" },
-    { name: "HTML", category: "Frontend" },
-    { name: "CSS", category: "Frontend" },
-    { name: "Node.js", category: "Backend" },
-    { name: "Express", category: "Backend" },
-    { name: "REST API", category: "Backend" },
-    { name: "GraphQL", category: "Backend" },
-    { name: "PostgreSQL", category: "Database" },
-    { name: "MySQL", category: "Database" },
-    { name: "Redis", category: "Database" },
-    { name: "React Native", category: "Mobile" },
-    { name: "Expo", category: "Mobile" },
-    { name: "Docker", category: "Tools" },
+    { name: "Software Development", category: "Core" },
+    { name: "Artificial Intelligence", category: "AI" },
+    { name: "Prompt Engineering", category: "AI" },
+    { name: "Python", category: "Languages" },
+    { name: "C", category: "Languages" },
+    { name: "HTML", category: "Web" },
+    { name: "CSS", category: "Web" },
+    { name: "JavaScript", category: "Web" },
+    { name: "Next.js", category: "Web" },
     { name: "Git", category: "Tools" },
-    { name: "Linux", category: "Tools" },
-    { name: "Vercel", category: "Tools" },
-    { name: "Figma", category: "Design" },
-    { name: "Framer", category: "Design" },
+    { name: "GitHub", category: "Tools" },
   ],
   experiences: [
     {
-      id: "current-role",
-      company: "Your Current Company",
-      role: "Senior Software Engineer",
-      employmentType: "Full-time",
-      location: "Remote",
-      startDate: "2024-01-01",
+      id: "aiml-officer",
+      company: "AI/ML Club — Irvington High School",
+      role: "AI/ML Club Officer",
+      employmentType: "Leadership",
+      location: "Fremont, California",
+      startDate: "2026-08-01",
       endDate: null,
       description:
-        "Working on a product team — ship features end-to-end, mentor juniors, and own the frontend codebase.",
+        "Helping organize and support an AI/ML-focused student community.",
       bullets: [
-        "Migrated the dashboard from CRA to Next.js App Router with no user-facing downtime.",
-        "Cut median page load by 35% via image and bundle work.",
+        "Collaborate with students interested in artificial intelligence and machine learning.",
+        "Help plan activities and learning opportunities around AI/ML.",
+        "Explore practical applications of emerging AI technologies.",
       ],
-      tags: ["Next.js", "TypeScript", "PostgreSQL"],
+      tags: ["AI/ML", "Teaching", "Community"],
     },
     {
-      id: "previous-role",
-      company: "A Previous Company",
-      role: "Frontend Engineer",
-      employmentType: "Full-time",
-      location: "Remote",
-      startDate: "2022-03-01",
-      endDate: "2023-12-31",
+      id: "senior-patrol-leader",
+      company: "Boy Scouts of America",
+      role: "Senior Patrol Leader",
+      employmentType: "Leadership",
+      location: "Fremont, California",
+      startDate: "2026-02-01",
+      endDate: null,
       description:
-        "Built customer-facing web apps for an early-stage startup. Wore many hats: design, frontend, light backend.",
-      tags: ["React", "TypeScript", "Tailwind"],
-    },
-    {
-      id: "freelance",
-      company: "Freelance",
-      role: "Web Developer",
-      employmentType: "Freelance",
-      startDate: "2020-06-01",
-      endDate: "2022-02-28",
-      description:
-        "Helped small businesses ship marketing sites and small web apps.",
+        "Top youth leadership role in the troop — running the program week to week.",
+      bullets: [
+        "Lead weekly troop meetings and coordinate activities for ~50 Scouts.",
+        "Planned and executed 15+ troop events, including camping and backpacking trips.",
+        "Delegated responsibilities and coordinated logistics across Scouts and adult leadership.",
+        "Helped create and run activities that develop younger Scouts' leadership and outdoor skills.",
+      ],
+      tags: ["Leadership", "Logistics", "Mentoring"],
     },
   ],
 };

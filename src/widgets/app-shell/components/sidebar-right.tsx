@@ -1,24 +1,14 @@
-import { ArticleListCard, listArticles } from "@/features/articles";
 import { LatestProjectsCard, listLatestProjects } from "@/features/projects";
-import {
-  LatestStoreItemsCard,
-  listLatestStoreItems,
-} from "@/features/store";
 import { cn } from "@/lib/utils";
 
 /**
  * Right sidebar of the app shell.
  *
- * Composes three independent features (articles, projects, store).
- * This composition lives in a widget — features never reference each
- * other directly.
+ * Composes the projects feature. This composition lives in a widget —
+ * features never reference each other directly.
  */
 export async function SidebarRight({ className }: { className?: string }) {
-  const [articles, latestProjects, latestStoreItems] = await Promise.all([
-    listArticles(),
-    listLatestProjects(4),
-    listLatestStoreItems(4),
-  ]);
+  const latestProjects = await listLatestProjects(4);
 
   return (
     <aside
@@ -27,9 +17,7 @@ export async function SidebarRight({ className }: { className?: string }) {
         className,
       )}
     >
-      <ArticleListCard articles={articles} />
       <LatestProjectsCard projects={latestProjects} />
-      <LatestStoreItemsCard items={latestStoreItems} />
     </aside>
   );
 }

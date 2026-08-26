@@ -9,7 +9,6 @@ export {
 export { ArticleDetail } from "./components/article-detail";
 export type { ArticleAuthor } from "./components/article-detail";
 export { ArticleBody } from "./components/article-body";
-export { PostsView } from "./components/posts-view";
 export {
   listArticles,
   loadArticles,

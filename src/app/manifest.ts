@@ -2,6 +2,9 @@ import type { MetadataRoute } from "next";
 
 import { siteConfig } from "@/config/site";
 
+/** Static export: metadata routes must opt into static rendering. */
+export const dynamic = "force-static";
+
 /**
  * Web App Manifest.
  *

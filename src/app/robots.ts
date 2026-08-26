@@ -2,6 +2,9 @@ import type { MetadataRoute } from "next";
 
 import { absoluteUrl } from "@/lib/seo";
 
+/** Static export: metadata routes must opt into static rendering. */
+export const dynamic = "force-static";
+
 /**
  * Robots policy.
  *

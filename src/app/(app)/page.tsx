@@ -1,18 +1,14 @@
 import type { Metadata } from "next";
-import { Newspaper } from "lucide-react";
+import { FolderKanban } from "lucide-react";
 
 import { JsonLd } from "@/components/common/json-ld";
 import { siteConfig } from "@/config/site";
-import {
-  ARTICLES_PAGE_SIZE,
-  loadArticles,
-  PostsView,
-} from "@/features/articles";
 import {
   getCurrentProfile,
   ProfileHeader,
   ProfileSocialLinks,
 } from "@/features/profile";
+import { ProjectGrid, listLatestProjects } from "@/features/projects";
 import { absoluteUrl, breadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -33,14 +29,14 @@ export const metadata: Metadata = {
 };
 
 /**
- * Home route — profile header and the latest articles feed.
- * The first article page is fetched on the server so the initial
- * paint includes content; the client view picks up infinite scroll.
+ * Home route — profile header followed by the featured projects grid.
+ * Both features load their own static data on the server so the
+ * initial paint is fully rendered HTML.
  */
 export default async function HomePage() {
-  const [profile, initialPage] = await Promise.all([
+  const [profile, latestProjects] = await Promise.all([
     getCurrentProfile(),
-    loadArticles({ limit: ARTICLES_PAGE_SIZE }),
+    listLatestProjects(6),
   ]);
 
   const breadcrumb = breadcrumbJsonLd([
@@ -58,10 +54,10 @@ export default async function HomePage() {
 
       <section className="flex flex-col gap-6">
         <h2 className="flex items-center gap-2 text-base font-semibold text-foreground">
-          <Newspaper className="size-4" aria-hidden />
-          Latest Posts
+          <FolderKanban className="size-4" aria-hidden />
+          Projects
         </h2>
-        <PostsView initialPage={initialPage} />
+        <ProjectGrid projects={latestProjects} />
       </section>
     </div>
   );

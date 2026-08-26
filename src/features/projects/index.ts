@@ -6,7 +6,6 @@ export {
   ProjectCardSkeleton,
   ProjectGridSkeleton,
 } from "./components/project-card-skeleton";
-export { ProjectsView } from "./components/projects-view";
 export { LatestProjectsCard } from "./components/latest-projects-card";
 export {
   loadProjects,

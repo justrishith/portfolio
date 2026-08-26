@@ -10,7 +10,9 @@ export type EmploymentType =
   | "Part-time"
   | "Freelance"
   | "Contract"
-  | "Internship";
+  | "Internship"
+  | "Leadership"
+  | "Volunteer";
 
 export type Experience = {
   readonly id: string;

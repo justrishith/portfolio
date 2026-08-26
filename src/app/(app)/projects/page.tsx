@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
 
 import { JsonLd } from "@/components/common/json-ld";
-import {
-  loadProjects,
-  PROJECTS_PAGE_SIZE,
-  ProjectsView,
-} from "@/features/projects";
+import { ProjectGrid, loadProjects } from "@/features/projects";
 import {
   absoluteUrl,
   breadcrumbJsonLd,
@@ -14,7 +10,7 @@ import {
 import { siteConfig } from "@/config/site";
 
 const description =
-  "A collection of projects I'm currently working on or have shipped — some open source, some private client work.";
+  "Things I've designed, built, and shipped — with AI as a tool and understanding as the bar.";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -30,11 +26,11 @@ export const metadata: Metadata = {
 
 /**
  * Projects — full project listing.
- * Renders the first page on the server so the initial paint
- * includes content; subsequent pages are loaded by the client view.
+ * Fully static: every project renders in the initial HTML (there are
+ * only a few by design), so no client-side pagination is needed.
  */
 export default async function ProjectsPage() {
-  const initialPage = await loadProjects({ limit: PROJECTS_PAGE_SIZE });
+  const { items } = await loadProjects({ limit: 100 });
 
   return (
     <div className="mx-auto flex w-full max-w-3xl flex-col gap-6">
@@ -64,7 +60,7 @@ export default async function ProjectsPage() {
         </p>
       </header>
 
-      <ProjectsView initialPage={initialPage} />
+      <ProjectGrid projects={items} />
     </div>
   );
 }

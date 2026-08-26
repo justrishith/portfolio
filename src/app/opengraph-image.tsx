@@ -17,6 +17,9 @@ export const alt = `${siteConfig.name} — ${siteConfig.author.role}`;
 export const size = OG_SIZE;
 export const contentType = "image/png";
 
+/** Static export: generated at build time, served as a static PNG. */
+export const dynamic = "force-static";
+
 export default async function Image() {
   return new ImageResponse(
     (
