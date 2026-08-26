@@ -15,7 +15,7 @@ export const projectsData: readonly Project[] = [
     visibility: "open-source",
     description:
       "A harness-agnostic Markdown workspace template that helps AI coding sessions resume without losing context.",
-    tags: ["Markdown", "Open Source", "AI tooling"],
+    tags: ["Markdown", "AI tooling", "No lock-in"],
     coverUrl: "/threadline.svg",
     coverWidth: 900,
     coverHeight: 600,

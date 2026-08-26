@@ -35,8 +35,8 @@ export function HomeHero({ profile }: { profile: Profile }) {
         .
       </p>
       <p className="max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-        {profile.bio} Learning in public through Harvard&apos;s CS50 — and I
-        make sure I can explain every line of everything here.
+        Learning in public through Harvard&apos;s CS50 — and I make sure I can
+        explain every line of everything here.
       </p>
       <div className="flex flex-wrap items-center gap-3">
         <Button asChild>

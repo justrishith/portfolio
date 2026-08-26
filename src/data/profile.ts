@@ -40,7 +40,7 @@ export const profileData: Profile = {
   experiences: [
     {
       id: "aiml-officer",
-      company: "AI/ML Club — Irvington High School",
+      company: "Irvington High School",
       role: "AI/ML Club Officer",
       employmentType: "Leadership",
       location: "Fremont, California",
