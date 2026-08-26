@@ -1,5 +1,6 @@
 export {
   HomeHero,
+  HomeSkills,
   HomeProjects,
   HomeLeadership,
   HomeContact,

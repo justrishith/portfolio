@@ -10,6 +10,7 @@ import {
   HomeHero,
   HomeLeadership,
   HomeProjects,
+  HomeSkills,
 } from "@/widgets/home";
 
 export const metadata: Metadata = {
@@ -39,9 +40,10 @@ export default async function HomePage() {
   ]);
 
   return (
-    <div className="mx-auto flex w-full max-w-2xl flex-col gap-12 px-4 pb-16 pt-10">
+    <div className="mx-auto flex w-full max-w-6xl flex-col gap-14 px-6 pb-20 pt-12">
       <JsonLd data={breadcrumb} />
       <HomeHero profile={profile} />
+      <HomeSkills />
       <HomeProjects projects={latestProjects} />
       <HomeLeadership experiences={profile.experiences} />
       <HomeContact />
