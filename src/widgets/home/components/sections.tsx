@@ -1,5 +1,4 @@
-import Image from "next/image";
-import { FolderKanban, Mail, MapPin } from "lucide-react";
+import { FolderKanban, Mail } from "lucide-react";
 
 import { Marquee } from "@/components/common/marquee";
 import { TextRotate } from "@/components/common/text-rotate";
@@ -10,10 +9,9 @@ import type { Profile } from "@/features/profile";
 import type { Project } from "@/features/projects";
 
 /**
- * One-page home composition: hero → skills marquee → projects →
- * leadership → contact. Full-width layout (max-w-6xl) so the page
- * uses the whole canvas instead of a narrow centered column.
- * Lives in a widget because it composes multiple features.
+ * One-page home composition — typographic, image-free (OG aesthetic):
+ * hero → skills marquee → projects → leadership → photography → contact.
+ * The photography section is the only place real photos appear.
  */
 
 const ROTATING_WORDS = [
@@ -39,94 +37,52 @@ const SKILLS = [
 
 export function HomeHero({ profile }: { profile: Profile }) {
   return (
-    <section className="grid items-center gap-10 pt-6 lg:grid-cols-[1.2fr_1fr]">
-      <div className="flex flex-col gap-5">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-          High-school builder · Fremont, CA
-        </p>
-        <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-          Rishith Karnati
-        </h1>
-        <p className="text-xl text-muted-foreground sm:text-2xl">
-          I ship small products{" "}
-          <TextRotate
-            words={ROTATING_WORDS}
-            className="font-semibold text-foreground"
-          />
-          .
-        </p>
-        <p className="max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-          Learning in public through Harvard&apos;s CS50 — and I make sure I
-          can explain every line of everything here.
-        </p>
-        <div className="flex flex-wrap items-center gap-3 pt-1">
-          <Button asChild size="lg">
-            <a href={`mailto:${siteConfig.contact.socials.email}`}>
-              <Mail className="size-4" aria-hidden />
-              Email me
-            </a>
-          </Button>
-          <Button asChild size="lg" variant="outline">
-            <a
-              href="https://www.linkedin.com/in/rishith-karnati-5498bb409"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn ↗
-            </a>
-          </Button>
-          <Button asChild size="lg" variant="outline">
-            <a
-              href="https://github.com/justrishith"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub ↗
-            </a>
-          </Button>
-        </div>
+    <section className="flex flex-col gap-6 pt-8">
+      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+        High-school builder · Fremont, CA
+      </p>
+      <h1 className="max-w-4xl text-6xl font-extrabold leading-[0.95] tracking-tighter text-foreground sm:text-7xl lg:text-8xl">
+        Rishith Karnati
+      </h1>
+      <p className="text-2xl text-muted-foreground sm:text-3xl">
+        I ship small products{" "}
+        <TextRotate
+          words={ROTATING_WORDS}
+          className="font-semibold text-foreground"
+        />
+        .
+      </p>
+      <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+        Learning in public through Harvard&apos;s CS50 — and I make sure I can
+        explain every line of everything here.
+      </p>
+      <div className="flex flex-wrap items-center gap-3 pt-2">
+        <Button asChild size="lg">
+          <a href={`mailto:${siteConfig.contact.socials.email}`}>
+            <Mail className="size-4" aria-hidden />
+            Email me
+          </a>
+        </Button>
+        <Button asChild size="lg" variant="outline">
+          <a
+            href="https://www.linkedin.com/in/rishith-karnati-5498bb409"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn ↗
+          </a>
+        </Button>
+        <Button asChild size="lg" variant="outline">
+          <a
+            href="https://github.com/justrishith"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub ↗
+          </a>
+        </Button>
       </div>
-
-      <ProfilePanel profile={profile} />
     </section>
-  );
-}
-
-function ProfilePanel({ profile }: { profile: Profile }) {
-  return (
-    <div className="relative overflow-hidden rounded-2xl border border-border/60">
-      <Image
-        src="/cover.svg"
-        alt=""
-        width={800}
-        height={500}
-        priority
-        className="h-56 w-full object-cover sm:h-64"
-      />
-      <div className="flex items-end gap-4 p-5">
-        <div className="-mt-16 size-20 shrink-0 overflow-hidden rounded-2xl ring-4 ring-background">
-          <Image
-            src="/avatar.svg"
-            alt={`${profile.name} monogram`}
-            width={80}
-            height={80}
-            className="h-full w-full object-cover"
-          />
-        </div>
-        <div className="flex flex-col gap-1.5 pb-0.5">
-          <p className="text-sm font-semibold text-foreground">{profile.name}</p>
-          <ul className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-muted-foreground">
-            <li className="inline-flex items-center gap-1">
-              <MapPin className="size-3" aria-hidden />
-              {profile.location}
-            </li>
-          </ul>
-          <Badge className="w-fit bg-emerald-500/15 text-emerald-500 hover:bg-emerald-500/15">
-            Open to internships
-          </Badge>
-        </div>
-      </div>
-    </div>
   );
 }
 
@@ -154,78 +110,69 @@ export function HomeProjects({ projects }: { projects: readonly Project[] }) {
         <FolderKanban className="size-5" aria-hidden />
         Projects
       </h2>
-      <div className="grid gap-6 md:grid-cols-2">
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+      <div className="grid gap-5 md:grid-cols-2">
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={project.id}
+            project={project}
+            index={index}
+          />
         ))}
       </div>
     </section>
   );
 }
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({
+  project,
+  index,
+}: {
+  project: Project;
+  index: number;
+}) {
   return (
-    <article className="group flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card transition-all hover:-translate-y-1 hover:border-foreground/25">
-      <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-border/60">
-        <Image
-          src={project.coverUrl}
-          alt={`${project.title} cover`}
-          fill
-          sizes="(min-width: 768px) 50vw, 100vw"
-          className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-        />
-      </div>
-      <div className="flex flex-1 flex-col gap-3 p-6">
-        <div className="flex items-center justify-between gap-2">
-          <Badge variant="secondary">Open source</Badge>
-          <span className="text-xs text-muted-foreground">
-            {new Date(project.publishedAt).toLocaleDateString("en-US", {
-              month: "short",
-              year: "numeric",
-            })}
-          </span>
-        </div>
-        <div className="flex flex-col gap-1.5">
-          <h3 className="text-2xl font-semibold tracking-tight text-foreground">
-            {project.title}
-          </h3>
-          {project.description ? (
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              {project.description}
-            </p>
-          ) : null}
-        </div>
-        {project.tags?.length ? (
-          <ul className="flex flex-wrap gap-1.5">
-            {project.tags.map((tag) => (
-              <li key={tag}>
-                <Badge variant="outline" className="font-normal">
-                  {tag}
-                </Badge>
-              </li>
-            ))}
-          </ul>
-        ) : null}
-        <div className="mt-auto flex items-center gap-4 pt-3 text-sm font-medium">
+    <article className="group flex min-h-[260px] flex-col gap-3 rounded-2xl border border-border/60 bg-card p-8 transition-all hover:-translate-y-1 hover:border-primary/50">
+      <span className="text-xs font-semibold text-primary">
+        {String(index + 1).padStart(2, "0")} / OPEN SOURCE
+      </span>
+      <h3 className="text-3xl font-bold tracking-tight text-foreground">
+        {project.title}
+      </h3>
+      {project.description ? (
+        <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
+          {project.description}
+        </p>
+      ) : null}
+      {project.tags?.length ? (
+        <ul className="flex flex-wrap gap-1.5">
+          {project.tags.map((tag) => (
+            <li key={tag}>
+              <Badge variant="outline" className="font-normal">
+                {tag}
+              </Badge>
+            </li>
+          ))}
+        </ul>
+      ) : null}
+      <div className="mt-auto flex items-center gap-5 pt-4 text-sm font-semibold">
+        <a
+          href={project.demoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary underline-offset-4 hover:underline"
+        >
+          Open ↗
+        </a>
+        {"repoUrl" in project && project.repoUrl ? (
           <a
-            href={project.demoUrl}
+            href={project.repoUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-foreground underline-offset-4 hover:underline"
+            className="text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
           >
-            Open ↗
+            Source ↗
           </a>
-          {"repoUrl" in project && project.repoUrl ? (
-            <a
-              href={project.repoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
-            >
-              Source ↗
-            </a>
-          ) : null}
-        </div>
+        ) : null}
       </div>
     </article>
   );
@@ -239,11 +186,11 @@ export function HomeLeadership({
   return (
     <section className="flex flex-col gap-6" id="leadership">
       <h2 className="text-lg font-semibold text-foreground">Leadership</h2>
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-5 md:grid-cols-2">
         {experiences.map((exp) => (
           <article
             key={exp.id}
-            className="flex flex-col gap-3 rounded-2xl border border-border/60 bg-card p-6"
+            className="flex flex-col gap-3 rounded-2xl border border-border/60 bg-card p-8"
           >
             <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
               <h3 className="text-base font-semibold text-foreground">
@@ -287,41 +234,32 @@ function formatRange(start: string, end: string | null): string {
 export function HomeContact() {
   return (
     <section
-      className="relative overflow-hidden rounded-2xl border border-border/60 p-8 sm:p-12"
+      className="flex flex-col items-start gap-4 rounded-2xl border border-border/60 bg-card p-10 sm:p-14"
       id="contact"
     >
-      <Image
-        src="/cover.svg"
-        alt=""
-        fill
-        sizes="(min-width: 1152px) 1152px, 100vw"
-        className="object-cover"
-      />
-      <div className="relative flex flex-col items-start gap-4">
-        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Let&apos;s build something.
-        </h2>
-        <p className="max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
-          I&apos;m open to internships and learning opportunities with
-          early-stage teams — remote or around Fremont, CA.
-        </p>
-        <div className="flex flex-wrap items-center gap-3 pt-1">
-          <Button asChild size="lg">
-            <a href={`mailto:${siteConfig.contact.socials.email}`}>
-              <Mail className="size-4" aria-hidden />
-              {siteConfig.contact.socials.email}
-            </a>
-          </Button>
-          <Button asChild size="lg" variant="outline">
-            <a
-              href="https://www.linkedin.com/in/rishith-karnati-5498bb409"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn ↗
-            </a>
-          </Button>
-        </div>
+      <h2 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
+        Let&apos;s build something.
+      </h2>
+      <p className="max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
+        I&apos;m open to internships and learning opportunities with
+        early-stage teams — remote or around Fremont, CA.
+      </p>
+      <div className="flex flex-wrap items-center gap-3 pt-2">
+        <Button asChild size="lg">
+          <a href={`mailto:${siteConfig.contact.socials.email}`}>
+            <Mail className="size-4" aria-hidden />
+            {siteConfig.contact.socials.email}
+          </a>
+        </Button>
+        <Button asChild size="lg" variant="outline">
+          <a
+            href="https://www.linkedin.com/in/rishith-karnati-5498bb409"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn ↗
+          </a>
+        </Button>
       </div>
     </section>
   );
