@@ -3,5 +3,6 @@ export {
   HomeSkills,
   HomeProjects,
   HomeLeadership,
+  HomePhotos,
   HomeContact,
 } from "./components/sections";

@@ -1,4 +1,5 @@
-import { FolderKanban, Mail } from "lucide-react";
+import Image from "next/image";
+import { Camera, FolderKanban, Mail } from "lucide-react";
 
 import { Marquee } from "@/components/common/marquee";
 import { TextRotate } from "@/components/common/text-rotate";
@@ -7,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import type { Profile } from "@/features/profile";
 import type { Project } from "@/features/projects";
+import { photosData } from "@/data/photos";
 
 /**
  * One-page home composition — typographic, image-free (OG aesthetic):
@@ -229,6 +231,46 @@ function formatRange(start: string, end: string | null): string {
       year: "numeric",
     });
   return `${fmt(start)} — ${end ? fmt(end) : "Present"}`;
+}
+
+export function HomePhotos() {
+  return (
+    <section className="flex flex-col gap-6" id="photography">
+      <h2 className="flex items-center gap-2 text-lg font-semibold text-foreground">
+        <Camera className="size-5" aria-hidden />
+        Beyond the screen
+      </h2>
+      <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
+        When I&apos;m not building, I&apos;m hiking and shooting photos around
+        California.
+      </p>
+      <div className="grid gap-4 md:grid-cols-3">
+        {photosData.map((photo) => (
+          <figure
+            key={photo.src}
+            className={photo.wide ? "md:col-span-3" : undefined}
+          >
+            <div
+              className={`relative w-full overflow-hidden rounded-xl border border-border/60 ${
+                photo.wide ? "aspect-[21/9]" : "aspect-[4/3]"
+              }`}
+            >
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                sizes={photo.wide ? "(min-width: 1152px) 1104px, 100vw" : "(min-width: 768px) 360px, 100vw"}
+                className="object-cover transition-transform duration-300 hover:scale-[1.02]"
+              />
+            </div>
+            <figcaption className="mt-2 text-xs text-muted-foreground">
+              {photo.caption}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+  );
 }
 
 export function HomeContact() {

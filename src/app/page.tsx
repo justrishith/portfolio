@@ -9,6 +9,7 @@ import {
   HomeContact,
   HomeHero,
   HomeLeadership,
+  HomePhotos,
   HomeProjects,
   HomeSkills,
 } from "@/widgets/home";
@@ -46,6 +47,7 @@ export default async function HomePage() {
       <HomeSkills />
       <HomeProjects projects={latestProjects} />
       <HomeLeadership experiences={profile.experiences} />
+      <HomePhotos />
       <HomeContact />
       <footer className="flex flex-wrap items-center justify-between gap-2 border-t border-border/60 pt-4 text-xs text-muted-foreground">
         <span>
