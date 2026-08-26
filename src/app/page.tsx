@@ -39,7 +39,7 @@ export default async function HomePage() {
   ]);
 
   return (
-    <div className="mx-auto flex w-full max-w-2xl flex-col gap-12 pb-8">
+    <div className="mx-auto flex w-full max-w-2xl flex-col gap-12 px-4 pb-16 pt-10">
       <JsonLd data={breadcrumb} />
       <HomeHero profile={profile} />
       <HomeProjects projects={latestProjects} />

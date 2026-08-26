@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 
 import { JsonLd } from "@/components/common/json-ld";
+import { SiteHeader } from "@/components/layout/site-header";
 import { siteConfig } from "@/config/site";
 import { fontVariables } from "@/lib/fonts";
 import "@/lib/fontawesome";
@@ -129,7 +130,10 @@ export default function RootLayout({
         */}
         <JsonLd data={webSiteJsonLd()} />
         <JsonLd data={personJsonLd({ socialUrls: sameAsUrls })} />
-        <AppProviders>{children}</AppProviders>
+        <AppProviders>
+          <SiteHeader />
+          <main>{children}</main>
+        </AppProviders>
       </body>
     </html>
   );
