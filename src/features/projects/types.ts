@@ -6,6 +6,10 @@ type ProjectBase = {
   readonly id: string;
   readonly slug: string;
   readonly title: string;
+  /** One-sentence summary shown on cards. */
+  readonly description?: string;
+  /** Tech/tools badges shown on cards. */
+  readonly tags?: readonly string[];
   readonly coverUrl: string;
   /**
    * Intrinsic image dimensions. Required so the masonry layout can

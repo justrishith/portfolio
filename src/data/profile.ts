@@ -14,8 +14,7 @@ export const profileData: Profile = {
   handle: "justrishith",
   title: "Software Developer",
   avatarUrl: "/avatar.svg",
-  coverUrl:
-    "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1600&q=80",
+  coverUrl: "/cover.svg",
   bio: "High-school builder shipping small products with AI.",
   location: "Fremont, California",
   verified: false,

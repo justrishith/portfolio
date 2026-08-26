@@ -1,22 +1,18 @@
 import type { Metadata } from "next";
-import { FolderKanban } from "lucide-react";
 
 import { JsonLd } from "@/components/common/json-ld";
 import { siteConfig } from "@/config/site";
-import {
-  getCurrentProfile,
-  ProfileHeader,
-  ProfileSocialLinks,
-} from "@/features/profile";
-import { ProjectGrid, listLatestProjects } from "@/features/projects";
+import { getCurrentProfile } from "@/features/profile";
+import { listLatestProjects } from "@/features/projects";
 import { absoluteUrl, breadcrumbJsonLd } from "@/lib/seo";
+import {
+  HomeContact,
+  HomeHero,
+  HomeLeadership,
+  HomeProjects,
+} from "@/widgets/home";
 
 export const metadata: Metadata = {
-  /**
-   * Use the global title (`siteConfig.name`) as-is — the home page
-   * is the landing page, so the brand stands alone instead of being
-   * suffixed via the layout's title template.
-   */
   title: { absolute: `${siteConfig.name} — ${siteConfig.author.role}` },
   description: siteConfig.description,
   alternates: { canonical: "/" },
@@ -29,9 +25,8 @@ export const metadata: Metadata = {
 };
 
 /**
- * Home route — profile header followed by the featured projects grid.
- * Both features load their own static data on the server so the
- * initial paint is fully rendered HTML.
+ * One-page home: hero with rotating skills, projects, leadership,
+ * and contact — everything above the fold on a single scroll.
  */
 export default async function HomePage() {
   const [profile, latestProjects] = await Promise.all([
@@ -44,21 +39,25 @@ export default async function HomePage() {
   ]);
 
   return (
-    <div className="mx-auto flex w-full max-w-2xl flex-col gap-8">
+    <div className="mx-auto flex w-full max-w-2xl flex-col gap-12 pb-8">
       <JsonLd data={breadcrumb} />
-
-      <ProfileHeader
-        profile={profile}
-        action={<ProfileSocialLinks profileName={profile.name} />}
-      />
-
-      <section className="flex flex-col gap-6">
-        <h2 className="flex items-center gap-2 text-base font-semibold text-foreground">
-          <FolderKanban className="size-4" aria-hidden />
-          Projects
-        </h2>
-        <ProjectGrid projects={latestProjects} />
-      </section>
+      <HomeHero profile={profile} />
+      <HomeProjects projects={latestProjects} />
+      <HomeLeadership experiences={profile.experiences} />
+      <HomeContact />
+      <footer className="flex flex-wrap items-center justify-between gap-2 border-t border-border/60 pt-4 text-xs text-muted-foreground">
+        <span>
+          © {new Date().getFullYear()} {siteConfig.name}
+        </span>
+        <a
+          href={siteConfig.links.github || "https://github.com/justrishith"}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline-offset-4 hover:text-foreground hover:underline"
+        >
+          site source ↗
+        </a>
+      </footer>
     </div>
   );
 }

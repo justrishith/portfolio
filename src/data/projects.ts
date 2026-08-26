@@ -1,9 +1,8 @@
 /**
  * Static projects content.
  *
- * Only real, shipped projects (verified in LifeOS). Each entry is
- * `open-source` with a public repo. Covers are decorative stock
- * images, not screenshots of the products.
+ * Only real, shipped projects (verified in LifeOS). Covers are local
+ * SVG letter-marks — no stock photography.
  */
 
 import type { Project } from "@/features/projects";
@@ -14,8 +13,10 @@ export const projectsData: readonly Project[] = [
     slug: "threadline",
     title: "Threadline",
     visibility: "open-source",
-    coverUrl:
-      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=900&q=80",
+    description:
+      "A harness-agnostic Markdown workspace template that helps AI coding sessions resume without losing context.",
+    tags: ["Markdown", "Open Source", "AI tooling"],
+    coverUrl: "/threadline.svg",
     coverWidth: 900,
     coverHeight: 600,
     demoUrl: "https://github.com/justrishith/threadline",
@@ -27,8 +28,10 @@ export const projectsData: readonly Project[] = [
     slug: "linkup",
     title: "LinkUp",
     visibility: "open-source",
-    coverUrl:
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80",
+    description:
+      "A shared space for friend groups to plan events, ideas, expenses, and memories.",
+    tags: ["Next.js", "Supabase", "Tailwind"],
+    coverUrl: "/linkup.svg",
     coverWidth: 900,
     coverHeight: 600,
     demoUrl: "https://linkup-sand-kappa.vercel.app",
