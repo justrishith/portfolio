@@ -34,7 +34,7 @@ export const projectsData: readonly Project[] = [
     coverUrl: "/linkup.svg",
     coverWidth: 900,
     coverHeight: 600,
-    demoUrl: "https://linkup-sand-kappa.vercel.app",
+    demoUrl: "https://linkup-vjvg.vercel.app",
     repoUrl: "https://github.com/justrishith/linkup",
     publishedAt: "2026-08-25T00:00:00.000Z",
   },

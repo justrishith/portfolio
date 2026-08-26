@@ -12,7 +12,7 @@ Deployed on Vercel: URL set after first import (see below).
 ## Featured projects
 
 - [Threadline](https://github.com/justrishith/threadline) — harness-agnostic Markdown workspace template for AI coding sessions.
-- [LinkUp](https://github.com/justrishith/linkup) — shared space for friend groups ([live](https://linkup-sand-kappa.vercel.app)).
+- [LinkUp](https://github.com/justrishith/linkup) — shared space for friend groups ([live](https://linkup-vjvg.vercel.app)).
 
 ## Run locally
 

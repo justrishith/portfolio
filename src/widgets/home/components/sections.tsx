@@ -27,7 +27,7 @@ export function HomeHero({ profile }: { profile: Profile }) {
         High-school builder · Fremont, CA
       </p>
       <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-        Hi, I&apos;m Rishith.
+        Hi, I&apos;m Rishith Karnati.
       </h1>
       <p className="text-xl text-muted-foreground sm:text-2xl">
         I ship small products{" "}

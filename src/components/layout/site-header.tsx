@@ -12,7 +12,7 @@ export function SiteHeader() {
           href="/"
           className="text-sm font-bold tracking-tight text-foreground"
         >
-          RISHITH<span className="text-primary">.</span>
+          RISHITH K<span className="text-primary">.</span>
         </Link>
         <nav aria-label="Site" className="flex items-center gap-5 text-sm">
           <a
