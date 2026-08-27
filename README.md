@@ -7,7 +7,7 @@ Tailwind CSS v4, shadcn/ui. All content is static data in `src/data/`.
 
 ## Live
 
-Deployed on Vercel: URL set after first import (see below).
+Deployed on Vercel: - [Portfolio](https://portfolio-rho-henna-51.vercel.app/)
 
 ## Featured projects
 
