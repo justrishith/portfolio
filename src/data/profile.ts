@@ -20,7 +20,7 @@ export const profileData: Profile = {
   verified: false,
   about: [
     "I'm Rishith — a high-school software developer at Irvington High School (class of 2029) interested in computer science, artificial intelligence, and building useful technology.",
-    "I learn software by shipping small, understandable products instead of generating code I can't explain. That philosophy produced Threadline, an open-source AI-workspace template, and LinkUp, a web app for friend groups built with Next.js and Supabase.",
+    "I learn software by shipping small, understandable products instead of generating code I can't explain. That philosophy produced Threadline, a small plain-Markdown workspace for AI coding agents to resume work across sessions, and LinkUp, a shared space for friend groups to plan events, ideas, expenses, and memories built with Next.js and Supabase.",
     "Outside technical work I serve as an AI/ML Club Officer and as a Senior Patrol Leader in Scouts BSA, leading about 50 Scouts and running 15+ troop events — experience in leadership, organization, teaching, and collaboration.",
     "Currently working through Harvard's CS50 and strengthening my Python and front-end foundations. I'm open to internships and learning opportunities with early-stage teams.",
   ],

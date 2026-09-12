@@ -11,7 +11,7 @@ Deployed on Vercel: - [Portfolio](https://portfolio-rho-henna-51.vercel.app/)
 
 ## Featured projects
 
-- [Threadline](https://github.com/justrishith/threadline) — harness-agnostic Markdown workspace template for AI coding sessions.
+- [Threadline](https://github.com/justrishith/threadline) — small plain-Markdown workspace for AI coding agents to resume work across sessions ([live](https://justrishith.github.io/threadline/)).
 - [LinkUp](https://github.com/justrishith/linkup) — shared space for friend groups ([live](https://linkup-vjvg.vercel.app)).
 
 ## Run locally
