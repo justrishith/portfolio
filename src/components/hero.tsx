@@ -6,10 +6,15 @@ export function Hero() {
   return (
     <div className="top-zone" id="top">
       <div className="shell hero">
+        <span className="hero-rail tategaki" aria-hidden="true">
+          竹の道
+        </span>
         <Reveal className="hero-copy">
-          <span className="hero-kicker">{site.role.toUpperCase()}</span>
+          <span className="hero-kicker">
+            <i>●</i> {site.role.toUpperCase()}
+          </span>
           <h1>
-            RISHITH <span className="outline">KARNATI</span>
+            RISHITH <span className="slashed">KARNATI</span>
           </h1>
           <p className="hero-sub">
             Grade 10, Irvington. Java and robots. Hackathon organizer. Troop
@@ -29,7 +34,7 @@ export function Hero() {
             </a>
           </div>
           <p className="hero-meta">
-            {site.coords} · {site.status}
+            {site.coords} · <b>{site.status}</b>
           </p>
         </Reveal>
       </div>

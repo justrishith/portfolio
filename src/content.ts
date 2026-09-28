@@ -31,10 +31,13 @@ export const links = {
 
 export const tickerItems = [
   "JAVA",
+  "竹",
   "FTC 32678",
   "SENTINEL HACKS",
+  "武士道",
   "JAN 9 2027",
   "TROOP 199",
+  "旅",
   "DAVINCI RESOLVE",
   "BERKELEY BOUND",
 ] as const;

@@ -6,9 +6,18 @@ export function Work() {
   return (
     <section className="zone" id="work" aria-label="Projects">
       <div className="shell">
-        <span className="eyebrow">01 · SELECTED WORK</span>
-        <h2>Shipped.</h2>
-        <p className="zone-lede">Real projects. Explainable lines.</p>
+        <div className="zone-head">
+          <span className="tategaki" aria-hidden="true">
+            作る
+          </span>
+          <div>
+            <span className="eyebrow">
+              01 <i>·</i> SELECTED WORK
+            </span>
+            <h2>Shipped.</h2>
+            <p className="zone-lede">Real projects. Explainable lines.</p>
+          </div>
+        </div>
         <div className="work-grid">
           {projects.map((project, i) => (
             <Reveal key={project.name}>

@@ -1,0 +1,266 @@
+<!-- RISITH PORTFOLIO — 3 DIRECTION EXPLORER · 2026-09-28 · source: src/content.ts -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3 directions — Rishith Karnati portfolio</title>
+<style>
+  body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f4f1e8; color: #1c1a15; }
+  .chrome { max-width: 1180px; margin: 0 auto; padding: 40px 24px 8px; }
+  .chrome h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.4rem); letter-spacing: -.04em; }
+  .chrome p.sub { color: #555; max-width: 60ch; }
+  .meta { font-family: "Courier New", monospace; font-size: .75rem; letter-spacing: .1em; color: #777; }
+  .decide { border: 2px solid #1c1a15; padding: 16px 20px; margin: 24px 0 8px; background: #fff; font-size: .95rem; }
+  .variant { max-width: 1180px; margin: 32px auto; padding: 0 24px; }
+  .vlabel { display: flex; align-items: baseline; gap: 14px; margin-bottom: 6px; }
+  .vlabel .letter { font-size: 2.4rem; font-weight: 900; }
+  .vlabel h2 { margin: 0; font-size: 1.6rem; letter-spacing: -.02em; }
+  .tradeoff { font-style: italic; color: #444; margin: 0 0 4px; }
+  .analysis { color: #333; font-size: .92rem; max-width: 90ch; }
+  .stage { border: 2px solid #1c1a15; margin-top: 14px; overflow: hidden; }
+
+  /* ============ A. GARAGE TERMINAL ============ */
+  .va- { background: #0b0e0a; color: #d7e0c8; font-family: "Courier New", Courier, monospace; }
+  .va-bar { display: flex; gap: 8px; align-items: center; padding: 10px 14px; border-bottom: 1px solid #2a3324; font-size: .75rem; color: #8a9a5b; }
+  .va-dot { width: 11px; height: 11px; border-radius: 50%; }
+  .va-hero { padding: 44px 28px 8px; }
+  .va-hero .p { color: #8a9a5b; }
+  .va-hero h3 { font-size: clamp(2.2rem, 7vw, 4.6rem); margin: .2em 0; color: #f2efe6; letter-spacing: -.02em; }
+  .va-hero h3 .o { color: #ff681e; }
+  .va-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid #2a3324; border-bottom: 1px solid #2a3324; margin-top: 30px; }
+  .va-stats div { padding: 16px; border-right: 1px solid #2a3324; }
+  .va-stats div:last-child { border-right: 0; }
+  .va-stats b { display: block; font-size: 1.7rem; color: #ff681e; }
+  .va-stats span { font-size: .72rem; color: #8a9a5b; letter-spacing: .1em; }
+  .va-term { padding: 20px 28px 40px; min-height: 300px; }
+  .va-line { margin: 0 0 6px; word-break: break-word; }
+  .va-line .pr { color: #7ddf6a; }
+  .va-out { color: #d7e0c8; white-space: pre-wrap; }
+  .va-out a { color: #ffb37a; }
+  .va-row { display: flex; align-items: center; gap: 8px; }
+  .va-in { flex: 1; background: none; border: 0; outline: 0; color: #f2efe6; font: inherit; font-size: 1rem; padding: 0; }
+  .va-caret { display: inline-block; width: .6em; height: 1.1em; background: #7ddf6a; vertical-align: -2px; animation: va-blink 1s steps(1) infinite; }
+  @keyframes va-blink { 50% { opacity: 0; } }
+
+  /* ============ B. ZINE WALL ============ */
+  .vb- { background: #e8e2d2 url(''); padding: 34px 22px 44px; position: relative; font-family: Arial, Helvetica, sans-serif; color: #18120d; }
+  .vb-wall { max-width: 960px; margin: 0 auto; }
+  .vb-stickers { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+  .vb-stickers a { background: #ff681e; color: #18120d; font-weight: 900; font-size: .75rem; letter-spacing: .08em; text-decoration: none; padding: 8px 14px; border: 2px solid #18120d; box-shadow: 4px 4px 0 #18120d; transform: rotate(-1.5deg); display: inline-block; }
+  .vb-stickers a:nth-child(2n) { background: #fff8ee; transform: rotate(1.2deg); }
+  .vb-stickers a:nth-child(3n) { background: #003262; color: #fff8ee; transform: rotate(-.6deg); }
+  .vb-huge { font-size: clamp(3.4rem, 12vw, 9rem); line-height: .88; font-weight: 900; letter-spacing: -.05em; margin: 10px 0; }
+  .vb-huge .cut { background: #18120d; color: #fff8ee; padding: 0 .12em; display: inline-block; transform: rotate(-1deg); }
+  .vb-sub { max-width: 46ch; font-size: 1.05rem; background: #fff8ee; border: 2px solid #18120d; padding: 12px 16px; box-shadow: 6px 6px 0 #18120d; transform: rotate(.5deg); }
+  .vb-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 30px; }
+  .vb-card { background: #fff8ee; border: 2px solid #18120d; padding: 18px; box-shadow: 7px 7px 0 #18120d; position: relative; }
+  .vb-card:nth-child(odd) { transform: rotate(-.8deg); }
+  .vb-card:nth-child(even) { transform: rotate(.7deg); }
+  .vb-card::before { content: ""; position: absolute; top: -13px; left: 50%; width: 92px; height: 24px; background: rgba(255, 248, 238, .75); border: 1px solid #999; transform: translateX(-50%) rotate(-3deg); }
+  .vb-card h4 { margin: 0 0 6px; font-size: 1.5rem; letter-spacing: -.02em; }
+  .vb-card small { font-family: "Courier New", monospace; font-weight: 700; color: #dd4f0e; letter-spacing: .1em; }
+  .vb-card p { margin: 8px 0 10px; font-size: .92rem; }
+  .vb-card a { color: #18120d; font-weight: 900; }
+  .vb-photos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 26px; }
+  .vb-photos figure { margin: 0; background: #fff8ee; border: 2px solid #18120d; padding: 8px 8px 4px; box-shadow: 5px 5px 0 #18120d; }
+  .vb-photos figure:nth-child(odd) { transform: rotate(-1.4deg); }
+  .vb-photos figure:nth-child(even) { transform: rotate(1.1deg); }
+  .vb-photos img { width: 100%; height: 130px; object-fit: cover; filter: contrast(1.15) sepia(.25); }
+  .vb-photos figcaption { font-family: "Courier New", monospace; font-size: .68rem; font-weight: 700; padding: 6px 2px; }
+  .vb-marq { overflow: hidden; border-top: 3px solid #18120d; border-bottom: 3px solid #18120d; background: #003262; color: #fff8ee; margin-top: 30px; font-weight: 900; letter-spacing: .06em; }
+  .vb-track { display: flex; width: max-content; animation: vb-m 22s linear infinite; }
+  .vb-track span { padding: 10px 18px; white-space: nowrap; }
+  @keyframes vb-m { to { transform: translateX(-50%); } }
+
+  /* ============ C. FIELD MANUAL ============ */
+  .vc- { background: #fff; color: #111; font-family: Arial, Helvetica, sans-serif; }
+  .vc-spec { border-top: 6px double #111; border-bottom: 1px solid #111; padding: 10px 28px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-family: "Courier New", monospace; font-size: .7rem; letter-spacing: .12em; color: #333; }
+  .vc-body { max-width: 860px; margin: 0 auto; padding: 40px 28px 50px; }
+  .vc-body h3 { font-size: clamp(2.6rem, 7vw, 5rem); letter-spacing: -.04em; line-height: .95; margin: 0 0 6px; }
+  .vc-rule { border: 0; border-top: 3px solid #111; margin: 22px 0; }
+  .vc-sec { font-family: "Courier New", monospace; font-weight: 700; font-size: .75rem; letter-spacing: .14em; }
+  .vc-lede { font-size: 1.1rem; max-width: 60ch; }
+  .vc-table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: .95rem; }
+  .vc-table th { font-family: "Courier New", monospace; font-size: .7rem; letter-spacing: .12em; text-align: left; border-bottom: 2px solid #111; padding: 8px 10px 8px 0; }
+  .vc-table td { border-bottom: 1px solid #111; padding: 12px 10px 12px 0; vertical-align: top; }
+  .vc-table td.n { font-family: "Courier New", monospace; font-weight: 700; white-space: nowrap; }
+  .vc-table a { color: #0000ee; }
+  .vc-note { font-family: "Courier New", monospace; font-size: .75rem; color: #333; border-left: 3px solid #111; padding-left: 12px; margin-top: 18px; }
+  .vc-photos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 2px solid #111; margin-top: 14px; }
+  .vc-photos figure { margin: 0; border-right: 2px solid #111; }
+  .vc-photos figure:last-child { border-right: 0; }
+  .vc-photos img { width: 100%; height: 150px; object-fit: cover; filter: grayscale(1); }
+  .vc-photos figcaption { font-family: "Courier New", monospace; font-size: .65rem; padding: 6px 8px; border-top: 2px solid #111; }
+  .vc-foot { border-top: 6px double #111; padding: 14px 28px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-family: "Courier New", monospace; font-size: .72rem; color: #333; max-width: 860px; margin: 0 auto; }
+
+  @media (max-width: 700px) {
+    .va-stats { grid-template-columns: 1fr 1fr; }
+    .vb-panels { grid-template-columns: 1fr; }
+    .vb-photos { grid-template-columns: 1fr 1fr; }
+    .vc-photos { grid-template-columns: 1fr 1fr; }
+    .vc-photos figure { border-bottom: 2px solid #111; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .vb-track { animation: none; }
+    .va-caret { animation: none; }
+  }
+</style>
+</head>
+<body>
+<div class="chrome">
+  <h1>3 directions for Rishith's site</h1>
+  <p class="sub">Same real copy, same 4 projects, same links. Pick the one that feels like you. The winner gets rebuilt into the Next.js repo; the losers die here.</p>
+  <p class="meta">2026-09-28 · SOURCE: src/content.ts · SURFACE: homepage</p>
+  <div class="decide"><b>Want to play</b> → A &nbsp;·&nbsp; <b>want to feel</b> → B &nbsp;·&nbsp; <b>want to scan</b> → C</div>
+</div>
+
+<!-- ================= A ================= -->
+<div class="variant">
+  <div class="vlabel"><span class="letter">A</span><h2>Garage Terminal</h2></div>
+  <p class="tradeoff">Most dev-authentic, least skimmable. Type <b>help</b> in the prompt.</p>
+  <div class="stage va-">
+    <div class="va-bar"><span class="va-dot" style="background:#ff5f57"></span><span class="va-dot" style="background:#febc2e"></span><span class="va-dot" style="background:#28c840"></span><span>rishi@garage: ~</span></div>
+    <div class="va-hero">
+      <p class="p">$ boot --portfolio</p>
+      <h3>RISHITH <span class="o">KARNATI</span></h3>
+      <p class="p">grade 10 · irvington · FTC 32678 · troop 199 · trail film</p>
+    </div>
+    <div class="va-stats">
+      <div><b>32678</b><span>FTC TEAM</span></div>
+      <div><b>199</b><span>TROOP</span></div>
+      <div><b>04</b><span>SHIPPED</span></div>
+      <div><b>01·09</b><span>HACKATHON 2027</span></div>
+    </div>
+    <div class="va-term" id="va-term">
+      <p class="va-line"><span class="pr">rishi@garage:~$</span> <span class="va-out">whoami</span></p>
+      <p class="va-line va-out">grade-10 builder. java + robots. hackathon organizer. troop 199 SPL. davinci resolve.</p>
+      <p class="va-line"><span class="pr">rishi@garage:~$</span> <span class="va-out">ls projects/</span></p>
+      <p class="va-line va-out">sentinel-hacks/ numa/ linkup/ threadline/</p>
+      <div class="va-row"><span class="pr">rishi@garage:~$</span><input class="va-in" id="va-in" aria-label="terminal input" autocomplete="off" spellcheck="false" placeholder="type help"><span class="va-caret"></span></div>
+      <div id="va-out"></div>
+    </div>
+  </div>
+  <p class="analysis">Works: the whole resume becomes a toy engineers want to poke; stats read as telemetry. Risks: recruiters who don't type may miss content (mitigation: the whoami/ls output above is pre-rendered). Pick when the audience is builders.</p>
+</div>
+
+<!-- ================= B ================= -->
+<div class="variant">
+  <div class="vlabel"><span class="letter">B</span><h2>Zine Wall</h2></div>
+  <p class="tradeoff">Most personal, least minimal.</p>
+  <div class="stage vb-"><div class="vb-wall">
+    <div class="vb-stickers"><a href="mailto:krishith25@gmail.com">EMAIL ME</a><a href="https://github.com/justrishith">GITHUB</a><a href="https://www.instagram.com/rishithfilms_/">TRAIL FILM</a><a href="https://sentinelhacks.tech">JAN 9 2027</a></div>
+    <h3 class="vb-huge">RISHITH<br><span class="cut">KARNATI</span></h3>
+    <p class="vb-sub">Grade 10, Irvington. Java and robots. Hackathon organizer. Troop 199. I film every trail and cut it in Resolve.</p>
+    <div class="vb-panels">
+      <div class="vb-card"><small>2027 · ORGANIZER</small><h4>Sentinel Hacks</h4><p>Free student hackathon. Bay Area. Through FTC 32678.</p><a href="https://sentinelhacks.tech">OPEN ↗</a></div>
+      <div class="vb-card"><small>2026 · VOICE AI</small><h4>Numa</h4><p>Ambient voice agent inside the OpenCode desktop app.</p><a href="https://github.com/justrishith">SOURCE ↗</a></div>
+      <div class="vb-card"><small>2026 · NEXT.JS</small><h4>LinkUp</h4><p>Friend group space. Events, ideas, expenses.</p><a href="https://linkup-vjvg.vercel.app">OPEN ↗</a></div>
+      <div class="vb-card"><small>2026 · MARKDOWN</small><h4>Threadline</h4><p>Plain text memory for AI coding agents.</p><a href="https://justrishith.github.io/threadline/">OPEN ↗</a></div>
+    </div>
+    <div class="vb-photos">
+      <figure><img src="../public/photos/shasta.jpg" alt="Mount Shasta"><figcaption>SHASTA</figcaption></figure>
+      <figure><img src="../public/photos/lake-log.jpg" alt="Alpine lake"><figcaption>ALPINE AM</figcaption></figure>
+      <figure><img src="../public/photos/trail-friends.jpg" alt="On trail"><figcaption>ON TRAIL</figcaption></figure>
+      <figure><img src="../public/photos/lake-trees.jpg" alt="Through trees"><figcaption>TREES</figcaption></figure>
+    </div>
+    <div class="vb-marq"><div class="vb-track"><span>JAVA ✦ FTC 32678 ✦ SENTINEL HACKS ✦ TROOP 199 ✦ RESOLVE ✦ BERKELEY BOUND ✦&nbsp;</span><span>JAVA ✦ FTC 32678 ✦ SENTINEL HACKS ✦ TROOP 199 ✦ RESOLVE ✦ BERKELEY BOUND ✦&nbsp;</span></div></div>
+  </div></div>
+  <p class="analysis">Works: tape, tilt, and stickers make the trail side feel hand-made; recruiters remember it. Risks: density can tip into clutter on small screens; print/hostile-audience contexts suffer. Pick when personality is the point.</p>
+</div>
+
+<!-- ================= C ================= -->
+<div class="variant">
+  <div class="vlabel"><span class="letter">C</span><h2>Field Manual</h2></div>
+  <p class="tradeoff">Clearest, least edgy.</p>
+  <div class="stage vc-">
+    <div class="vc-spec"><span>DOC № RK-2026 · REV C</span><span>37.5485°N, 121.9886°W</span><span>STATUS: SHIPPING</span></div>
+    <div class="vc-body">
+      <p class="vc-sec">01 · IDENTITY</p>
+      <h3>Rishith Karnati</h3>
+      <p class="vc-lede">Grade 10, Irvington High. Java and robots. Hackathon organizer. Troop 199. Trail film, cut in Resolve.</p>
+      <hr class="vc-rule">
+      <p class="vc-sec">02 · SELECTED WORK</p>
+      <table class="vc-table">
+        <tr><th>№</th><th>PROJECT</th><th>SPEC</th><th>LINK</th></tr>
+        <tr><td class="n">01</td><td><b>Sentinel Hacks</b><br>Free student hackathon, Bay Area, FTC 32678.</td><td class="n">2027</td><td><a href="https://sentinelhacks.tech">OPEN ↗</a></td></tr>
+        <tr><td class="n">02</td><td><b>Numa</b><br>Ambient voice agent, OpenCode desktop.</td><td class="n">2026</td><td><a href="https://github.com/justrishith">SOURCE ↗</a></td></tr>
+        <tr><td class="n">03</td><td><b>LinkUp</b><br>Friend groups: events, ideas, expenses.</td><td class="n">2026</td><td><a href="https://linkup-vjvg.vercel.app">OPEN ↗</a></td></tr>
+        <tr><td class="n">04</td><td><b>Threadline</b><br>Plain-text memory for AI agents.</td><td class="n">2026</td><td><a href="https://justrishith.github.io/threadline/">OPEN ↗</a></td></tr>
+      </table>
+      <hr class="vc-rule">
+      <p class="vc-sec">03 · SERVICE RECORD</p>
+      <table class="vc-table">
+        <tr><td class="n">FTC 32678</td><td>Programmer + outreach. Java, robots, sponsors.</td></tr>
+        <tr><td class="n">TROOP 199</td><td>Senior Patrol Leader. 50 scouts, camping, teaching.</td></tr>
+        <tr><td class="n">FRIDAYS</td><td>Science volunteer, younger kids.</td></tr>
+      </table>
+      <hr class="vc-rule">
+      <p class="vc-sec">04 · FIELD PHOTOS</p>
+      <div class="vc-photos">
+        <figure><img src="../public/photos/shasta.jpg" alt="Mount Shasta"><figcaption>FIG.1 SHASTA</figcaption></figure>
+        <figure><img src="../public/photos/lake-log.jpg" alt="Alpine lake"><figcaption>FIG.2 LAKE</figcaption></figure>
+        <figure><img src="../public/photos/trail-friends.jpg" alt="On trail"><figcaption>FIG.3 TRAIL</figcaption></figure>
+        <figure><img src="../public/photos/lake-trees.jpg" alt="Trees"><figcaption>FIG.4 TREES</figcaption></figure>
+      </div>
+      <p class="vc-note">CONTACT: krishith25@gmail.com · github justrishith · ig _rishith_k / rishithfilms_ · discord _rishith_k</p>
+    </div>
+    <div class="vc-foot"><span>© 2026 RISHITH KARNATI</span><span>END OF DOC</span></div>
+  </div>
+  <p class="analysis">Works: anyone can scan it in 20 seconds including non-technical readers; tables print beautifully. Risks: the safe pick — least likely to be remembered. Pick when the audience includes recruiters and teachers.</p>
+</div>
+
+<div class="chrome"><div class="decide"><b>Want to play</b> → A &nbsp;·&nbsp; <b>want to feel</b> → B &nbsp;·&nbsp; <b>want to scan</b> → C</div></div>
+
+<script>
+(function () {
+  var input = document.getElementById('va-in');
+  var out = document.getElementById('va-out');
+  if (!input || !out) return;
+  var COMMANDS = {
+    help: 'commands: whoami · ls projects · cat contact · email · github · films · hackathon · clear',
+    whoami: 'grade-10 builder. java + robots. hackathon organizer. troop 199 SPL. davinci resolve.',
+    email: 'krishith25@gmail.com',
+    github: 'https://github.com/justrishith',
+    films: 'https://www.instagram.com/rishithfilms_/',
+    hackathon: 'sentinel hacks · jan 9 2027 · https://sentinelhacks.tech'
+  };
+  var PROJECTS = ['sentinel-hacks/', 'numa/', 'linkup/', 'threadline/'];
+  function print(cmd, text, link) {
+    var p1 = document.createElement('p');
+    p1.className = 'va-line';
+    var linkHtml = link ? ' <a href="' + link + '" target="_blank" rel="noopener">open ↗</a>' : '';
+    p1.innerHTML = '<span class="pr">rishi@garage:~$</span> ' + cmd;
+    var p2 = document.createElement('p');
+    p2.className = 'va-line va-out';
+    p2.textContent = text;
+    if (link) {
+      var a = document.createElement('a');
+      a.href = link; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'open ↗';
+      p2.appendChild(document.createTextNode(' '));
+      p2.appendChild(a);
+    }
+    out.appendChild(p1); out.appendChild(p2);
+    void linkHtml;
+  }
+  input.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter') return;
+    var raw = input.value.trim().toLowerCase();
+    input.value = '';
+    if (!raw) return;
+    if (raw === 'clear') { out.innerHTML = ''; return; }
+    if (raw === 'ls projects' || raw === 'ls projects/') { print(raw, PROJECTS.join('  ')); return; }
+    if (raw.indexOf('cat ') === 0) {
+      var f = raw.slice(4).replace(/\/$/, '');
+      if (f === 'contact') { print(raw, 'krishith25@gmail.com · github justrishith · ig _rishith_k'); return; }
+      if (PROJECTS.indexOf(f + '/') > -1) { print(raw, f + ': see projects/ table above. email me for the demo.'); return; }
+      print(raw, 'cat: ' + f + ': no such file. try: ls projects');
+      return;
+    }
+    if (COMMANDS[raw]) { print(raw, COMMANDS[raw]); return; }
+    print(raw, 'command not found: ' + raw + '. try: help');
+  });
+})();
+</script>
+</body>
+</html>

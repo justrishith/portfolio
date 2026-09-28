@@ -7,10 +7,17 @@ export function Trail() {
     <section className="zone" id="outside" aria-label="Photography" style={{ paddingTop: 0 }}>
       <div className="shell">
         <div className="trail-head">
-          <div>
-            <span className="eyebrow">03 · BEYOND THE SCREEN</span>
-            <h2>Trail film.</h2>
-            <p className="zone-lede">Hike. Shoot. Cut in Resolve.</p>
+          <div className="zone-head">
+            <span className="tategaki" aria-hidden="true">
+              旅する
+            </span>
+            <div>
+              <span className="eyebrow">
+                03 <i>·</i> BEYOND THE SCREEN
+              </span>
+              <h2>Trail film.</h2>
+              <p className="zone-lede">Hike. Shoot. Cut in Resolve.</p>
+            </div>
           </div>
         </div>
         <div className="photo-grid">
