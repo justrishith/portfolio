@@ -6,12 +6,9 @@ export function Work() {
   return (
     <section className="zone" id="work" aria-label="Projects">
       <div className="shell">
-        <span className="eyebrow">SELECTED WORK</span>
-        <h2>Things I&apos;ve shipped.</h2>
-        <p className="zone-lede">
-          Real projects with real users — everything here I can explain line
-          by line.
-        </p>
+        <span className="eyebrow">01 · SELECTED WORK</span>
+        <h2>Shipped.</h2>
+        <p className="zone-lede">Real projects. Explainable lines.</p>
         <div className="work-grid">
           {projects.map((project, i) => (
             <Reveal key={project.name}>

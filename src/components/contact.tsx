@@ -5,13 +5,9 @@ export function Contact() {
     <>
       <section className="contact-zone" id="contact" aria-label="Contact">
         <div className="shell">
-          <span className="eyebrow">CONTACT</span>
-          <h2>Let&apos;s build something — then hit the trail.</h2>
-          <p className="zone-lede">
-            Open to internships and learning opportunities with early-stage
-            teams. Long term: computer science, AI, Berkeley — and my own
-            company.
-          </p>
+          <span className="eyebrow">04 · CONTACT</span>
+          <h2>Build. Then trail.</h2>
+          <p className="zone-lede">Internships. Early teams. Berkeley. My own company.</p>
           <ul className="social-list">
             {socials.map((social) => (
               <li key={social.label}>
@@ -30,7 +26,7 @@ export function Contact() {
       </section>
       <footer className="shell footer">
         <span>
-          © {new Date().getFullYear()} {site.name} · Built raw. No template.
+          © {new Date().getFullYear()} {site.name} · {site.coords} · Built raw. No template.
         </span>
         <a href={links.siteSource} target="_blank" rel="noopener noreferrer">
           SITE SOURCE ↗

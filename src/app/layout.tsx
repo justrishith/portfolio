@@ -14,7 +14,7 @@ const bricolage = Bricolage_Grotesque({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — builds AI, robots, trails`,
+    default: `${site.name}: AI, robots, trails`,
     template: `%s · ${site.name}`,
   },
   description: site.description,

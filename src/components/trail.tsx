@@ -8,11 +8,9 @@ export function Trail() {
       <div className="shell">
         <div className="trail-head">
           <div>
-            <span className="eyebrow">BEYOND THE SCREEN</span>
-            <h2>Shot on the trail.</h2>
-            <p className="zone-lede">
-              Hiking, backpacking, and travel film — cut in DaVinci Resolve.
-            </p>
+            <span className="eyebrow">03 · BEYOND THE SCREEN</span>
+            <h2>Trail film.</h2>
+            <p className="zone-lede">Hike. Shoot. Cut in Resolve.</p>
           </div>
         </div>
         <div className="photo-grid">
@@ -35,7 +33,7 @@ export function Trail() {
           rel="noopener noreferrer"
           className="film-cta"
         >
-          @RISHITHFILMS_ — TRAIL FILM ↗
+          @RISHITHFILMS_ · TRAIL FILM ↗
         </a>
       </div>
     </section>

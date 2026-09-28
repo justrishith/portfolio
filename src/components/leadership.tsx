@@ -4,12 +4,9 @@ export function Leadership() {
   return (
     <section className="zone" id="leadership" aria-label="Leadership" style={{ paddingTop: 0 }}>
       <div className="shell">
-        <span className="eyebrow">LEADERSHIP</span>
+        <span className="eyebrow">02 · LEADERSHIP</span>
         <h2>Rooms I run.</h2>
-        <p className="zone-lede">
-          Grade 10, learning fast — by teaching, organizing, and showing up
-          every week.
-        </p>
+        <p className="zone-lede">Show up every week.</p>
         <div className="role-list">
           {leadership.map((item) => (
             <div className="role-row" key={item.role}>

@@ -6,11 +6,14 @@
 
 export const site = {
   name: "Rishith Karnati",
-  role: "Grade 10 · Irvington High School, Bay Area",
-  tagline: "AI, robots, and trails — then I film the whole thing.",
+  role: "Grade 10 · Irvington High, Bay Area",
+  tagline: "AI, robots, trails. Filmed.",
   description:
-    "Rishith Karnati — Grade 10 at Irvington High School. FTC robotics, Sentinel Hacks organizer, Scouts SPL, trail film.",
+    "Rishith Karnati. Grade 10, Irvington High. FTC robotics, Sentinel Hacks, Troop 199, trail film.",
   url: "https://justrishith.vercel.app",
+  coords: "37.5485°N, 121.9886°W",
+  status: "SHIPPING",
+  version: "V2 RAW",
 } as const;
 
 export const links = {
@@ -31,19 +34,19 @@ export const tickerItems = [
   "JAVA",
   "FTC 32678",
   "SENTINEL HACKS",
-  "JAN 9 · 2027",
+  "JAN 9 2027",
   "TROOP 199",
   "DAVINCI RESOLVE",
-  "BERKELEY-BOUND",
+  "BERKELEY BOUND",
   "BUILT RAW",
   "NO TEMPLATE",
 ] as const;
 
 export const facts = [
-  { label: "TEAM №", value: "32678", note: "FTC Sentinels — code + outreach" },
+  { label: "TEAM №", value: "32678", note: "FTC Sentinels" },
   { label: "TROOP", value: "199", note: "Senior Patrol Leader" },
-  { label: "SHIPPED", value: "04", note: "Projects and counting" },
-  { label: "HACKATHON", value: "JAN 9 27", note: "Sentinel Hacks organizer" },
+  { label: "SHIPPED", value: "04", note: "Projects" },
+  { label: "HACKATHON", value: "JAN 9 27", note: "Sentinel Hacks" },
 ] as const;
 
 export type Project = {
@@ -52,65 +55,59 @@ export type Project = {
   readonly stack: string;
   readonly blurb: string;
   readonly open: string;
-  readonly source: string;
 };
 
 export const projects: readonly Project[] = [
   {
     name: "Sentinel Hacks",
     year: "2027",
-    stack: "Organizer · Outreach",
-    blurb: "Free student-run Bay Area hackathon through FTC Sentinels #32678.",
+    stack: "ORGANIZER",
+    blurb: "Free student hackathon. Bay Area. Through FTC 32678.",
     open: links.sentinelHacks,
-    source: links.sentinelsTeam,
   },
   {
     name: "Numa",
     year: "2026",
-    stack: "Voice AI · OpenCode",
-    blurb:
-      "Ambient voice agent integrated into the OpenCode desktop app — tuned through OpenCode directly.",
+    stack: "VOICE AI",
+    blurb: "Ambient voice agent inside the OpenCode desktop app.",
     open: links.github,
-    source: links.github,
   },
   {
     name: "LinkUp",
     year: "2026",
-    stack: "Next.js · Supabase",
-    blurb: "Shared space for friend groups — events, ideas, expenses, memories.",
+    stack: "NEXT.JS",
+    blurb: "Friend group space. Events, ideas, expenses.",
     open: "https://linkup-vjvg.vercel.app",
-    source: "https://github.com/justrishith/linkup",
   },
   {
     name: "Threadline",
     year: "2026",
-    stack: "Markdown · AI tooling",
-    blurb: "Plain-Markdown workspace so AI coding agents resume work across sessions.",
+    stack: "MARKDOWN",
+    blurb: "Plain text memory for AI coding agents.",
     open: "https://justrishith.github.io/threadline/",
-    source: "https://github.com/justrishith/threadline",
   },
 ];
 
 export const leadership = [
   {
-    role: "Programmer + Outreach Lead",
+    role: "Programmer + Outreach",
     org: "Sentinels FTC #32678",
-    detail: "Learning Java and robotics software; running sponsorships and outreach.",
+    detail: "Java. Robots. Sponsors.",
   },
   {
     role: "Organizer",
     org: "Sentinel Hacks",
-    detail: "Leading a free student hackathon — sponsors, venue, event day.",
+    detail: "Sponsors. Venue. Event day.",
   },
   {
     role: "Senior Patrol Leader",
-    org: "Scouts BSA · Troop 199",
-    detail: "Running the troop week to week; camping, backpacking, teaching younger Scouts.",
+    org: "Troop 199",
+    detail: "50 Scouts. Camping. Teaching.",
   },
   {
     role: "Science Volunteer",
-    org: "Friday teaching",
-    detail: "Teaching science to younger kids, every week.",
+    org: "Fridays",
+    detail: "Science for younger kids.",
   },
 ] as const;
 
@@ -118,22 +115,22 @@ export const photos = [
   {
     src: "/photos/shasta.jpg",
     alt: "Mount Shasta above a forested ridge",
-    caption: "MOUNT SHASTA, CA",
+    caption: "SHASTA",
   },
   {
     src: "/photos/lake-log.jpg",
     alt: "Sitting on a log at the edge of an alpine lake",
-    caption: "ALPINE LAKE MORNINGS",
+    caption: "ALPINE AM",
   },
   {
     src: "/photos/trail-friends.jpg",
     alt: "Two hikers looking out over a granite-ringed lake",
-    caption: "ON THE TRAIL",
+    caption: "ON TRAIL",
   },
   {
     src: "/photos/lake-trees.jpg",
     alt: "A lake seen through pine trees",
-    caption: "THROUGH THE TREES",
+    caption: "TREES",
   },
 ] as const;
 

@@ -1,6 +1,5 @@
 import { links, site } from "@/content";
 
-import { Countdown } from "./countdown";
 import { Reveal } from "./reveal";
 
 export function Hero() {
@@ -13,9 +12,8 @@ export function Hero() {
             RISHITH <span className="outline">KARNATI</span>
           </h1>
           <p className="hero-sub">
-            {site.tagline} Grade 10 at Irvington, programming FTC robots in
-            Java, organizing Sentinel Hacks, leading Scouts Troop 199 — and
-            filming every trail in DaVinci Resolve.
+            Grade 10, Irvington. Java and robots. Hackathon organizer. Troop
+            199. Trail film.
           </p>
           <div className="hero-cta">
             <a href={links.email} className="button hero-button">
@@ -30,19 +28,9 @@ export function Hero() {
               TRAIL FILM ↗
             </a>
           </div>
-        </Reveal>
-        <Reveal
-          className="countdown-wrap"
-          aria-label="Countdown to Sentinel Hacks, January 9, 2027"
-        >
-          <div className="countdown-card">
-            <div className="countdown-tape">SENTINEL HACKS · JAN 09 2027</div>
-            <Countdown />
-            <p className="countdown-sub">
-              The free student hackathon I&apos;m organizing through FTC
-              Sentinels #32678.
-            </p>
-          </div>
+          <p className="hero-meta">
+            {site.coords} · {site.status} · {site.version}
+          </p>
         </Reveal>
       </div>
     </div>
