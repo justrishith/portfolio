@@ -10,7 +10,7 @@ export function Hero() {
         <Reveal className="hero-copy">
           <span className="hero-kicker">{site.role.toUpperCase()}</span>
           <h1>
-            RISHITH <span>KARNATI</span>
+            RISHITH <span className="outline">KARNATI</span>
           </h1>
           <p className="hero-sub">
             {site.tagline} Grade 10 at Irvington, programming FTC robots in

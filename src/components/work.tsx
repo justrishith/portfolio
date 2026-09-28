@@ -13,24 +13,26 @@ export function Work() {
           by line.
         </p>
         <div className="work-grid">
-          {projects.map((project) => (
+          {projects.map((project, i) => (
             <Reveal key={project.name}>
-              <article className="work-card">
-                <div className="work-meta">
-                  <span>{project.year}</span>
-                  <span>{project.stack.toUpperCase()}</span>
-                </div>
-                <h3>{project.name}</h3>
-                <p>{project.blurb}</p>
-                <div className="work-links">
-                  <a href={project.open} target="_blank" rel="noopener noreferrer">
-                    OPEN ↗
-                  </a>
-                  <a href={project.source} target="_blank" rel="noopener noreferrer">
-                    SOURCE ↗
-                  </a>
-                </div>
-              </article>
+              <a
+                className="work-row"
+                href={project.open}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="index" aria-hidden="true">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span>
+                  <h3>{project.name}</h3>
+                  <span className="stack">
+                    {project.year} · {project.stack.toUpperCase()}
+                  </span>
+                  <p>{project.blurb}</p>
+                </span>
+                <span className="go">OPEN ↗</span>
+              </a>
             </Reveal>
           ))}
         </div>

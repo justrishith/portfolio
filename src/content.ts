@@ -35,12 +35,15 @@ export const tickerItems = [
   "TROOP 199",
   "DAVINCI RESOLVE",
   "BERKELEY-BOUND",
+  "BUILT RAW",
+  "NO TEMPLATE",
 ] as const;
 
 export const facts = [
-  { label: "ROBOTICS", value: "FTC Sentinels #32678", note: "Programmer + outreach lead" },
-  { label: "HACKATHON", value: "Sentinel Hacks", note: "Organizer · Jan 9, 2027" },
-  { label: "SCOUTS", value: "Troop 199", note: "Senior Patrol Leader" },
+  { label: "TEAM №", value: "32678", note: "FTC Sentinels — code + outreach" },
+  { label: "TROOP", value: "199", note: "Senior Patrol Leader" },
+  { label: "SHIPPED", value: "04", note: "Projects and counting" },
+  { label: "HACKATHON", value: "JAN 9 27", note: "Sentinel Hacks organizer" },
 ] as const;
 
 export type Project = {

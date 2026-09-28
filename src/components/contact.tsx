@@ -30,7 +30,7 @@ export function Contact() {
       </section>
       <footer className="shell footer">
         <span>
-          © {new Date().getFullYear()} {site.name} · Irvington High, Fremont CA
+          © {new Date().getFullYear()} {site.name} · Built raw. No template.
         </span>
         <a href={links.siteSource} target="_blank" rel="noopener noreferrer">
           SITE SOURCE ↗
