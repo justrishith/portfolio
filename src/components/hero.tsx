@@ -29,7 +29,7 @@ export function Hero() {
             </a>
           </div>
           <p className="hero-meta">
-            {site.coords} · {site.status} · {site.version}
+            {site.coords} · {site.status}
           </p>
         </Reveal>
       </div>

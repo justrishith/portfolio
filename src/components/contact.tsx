@@ -26,7 +26,7 @@ export function Contact() {
       </section>
       <footer className="shell footer">
         <span>
-          © {new Date().getFullYear()} {site.name} · {site.coords} · Built raw. No template.
+          © {new Date().getFullYear()} {site.name} · {site.coords}
         </span>
         <a href={links.siteSource} target="_blank" rel="noopener noreferrer">
           SITE SOURCE ↗

@@ -13,7 +13,6 @@ export const site = {
   url: "https://justrishith.vercel.app",
   coords: "37.5485°N, 121.9886°W",
   status: "SHIPPING",
-  version: "V2 RAW",
 } as const;
 
 export const links = {
@@ -38,8 +37,6 @@ export const tickerItems = [
   "TROOP 199",
   "DAVINCI RESOLVE",
   "BERKELEY BOUND",
-  "BUILT RAW",
-  "NO TEMPLATE",
 ] as const;
 
 export const facts = [

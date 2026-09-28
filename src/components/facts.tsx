@@ -7,7 +7,9 @@ export function Facts() {
         {facts.map((fact) => (
           <div key={fact.label}>
             <small>{fact.label}</small>
-            <strong>{fact.value}</strong>
+            <strong className={fact.label === "HACKATHON" ? "alarm" : undefined}>
+              {fact.value}
+            </strong>
             <span>{fact.note}</span>
           </div>
         ))}
