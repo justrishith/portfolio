@@ -1,18 +1,8 @@
-# Portfolio
+# Rishith Karnati — personal site
 
-Personal portfolio of **Rishith Karnati** — high-school software developer, Fremont CA.
+Greenfield Next.js site in the Sentinel Hacks design language (paper/ink/orange, hard offset shadows, ticker). No template, no component library.
 
-Built on [next-folio](https://github.com/byma4n/next-folio) (MIT) — Next.js 16, React 19,
-Tailwind CSS v4, shadcn/ui. All content is static data in `src/data/`.
-
-## Live
-
-Deployed on Vercel: - [Portfolio](https://portfolio-rho-henna-51.vercel.app/)
-
-## Featured projects
-
-- [Threadline](https://github.com/justrishith/threadline) — small plain-Markdown workspace for AI coding agents to resume work across sessions ([live](https://justrishith.github.io/threadline/)).
-- [LinkUp](https://github.com/justrishith/linkup) — shared space for friend groups ([live](https://linkup-vjvg.vercel.app)).
+Live: https://justrishith.vercel.app/
 
 ## Run locally
 
@@ -23,12 +13,12 @@ npm run dev
 
 ## Deploy (Vercel)
 
-1. Import `justrishith/portfolio` at [vercel.com/new](https://vercel.com/new).
-2. Framework preset auto-detects Next.js — no config needed.
-3. Optional env var: `NEXT_PUBLIC_APP_URL=https://<your-app>.vercel.app` for correct canonical/OG URLs.
+Import `justrishith/portfolio` — Next.js auto-detected, no config needed.
 
 ## Structure
 
-- `src/config/site.ts` — identity, socials, SEO metadata
-- `src/data/profile.ts` — bio, skills, experience
-- `src/data/projects.ts` — project cards
+- `src/content.ts` — all copy + outbound links (single source of truth)
+- `src/app/globals.css` — tokens + all styles (plain CSS)
+- `src/app/layout.tsx`, `src/app/page.tsx` — shell + composition
+- `src/components/` — header, hero, countdown, ticker, facts, work, leadership, trail, contact, reveal
+- `public/photos/` — trail photography

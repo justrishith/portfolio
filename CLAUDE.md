@@ -1,17 +1,9 @@
-## Where to start when editing
+# Portfolio — greenfield rules
 
-- Site identity: `src/config/site.ts`
-- Page content: `src/data/*.ts`
-- Navigation: `src/config/nav.ts`
-- Theme tokens: `src/app/globals.css`
+No template. No shadcn, no Tailwind, no icon/font packages.
 
-## Architecture rules
-
-See `AGENTS.md`. The short version:
-
-- `src/app/` is routing only.
-- `src/features/<name>/` exposes a public API via `index.ts`. Never import a feature's internals from outside the folder.
-- Features must not import other features. Compose features inside `src/widgets/<name>/` or in route files under `src/app/`.
-- `src/lib/` is framework-agnostic. No React.
-- Only `src/lib/env.ts` reads `process.env`.
-- All static content lives in `src/data/` as plain TypeScript modules.
+- `src/content.ts` is the single source of truth for copy + links. No hardcoded handles/URLs in components.
+- Styling is plain CSS in `src/app/globals.css` using the Sentinel Hacks tokens (`--paper`, `--ink`, `--orange`, `--line`, `--muted`). New styles reuse existing classes first.
+- Components are server by default. Client components only for countdown + motion reveals, each isolated in its own file.
+- Motion: CSS keyframes first; the `motion` package only where CSS can't do it. Respect `prefers-reduced-motion`.
+- Photos live in `public/photos/`. No external images, no custom font requests beyond Bricolage Grotesque (brand font, already used by sentinelhacks.tech).
